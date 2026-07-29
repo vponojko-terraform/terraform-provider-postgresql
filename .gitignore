@@ -5,3 +5,5 @@
 .*.swp
 tests/docker-compose.*.yml
 terraform-provider-postgresql
+/.idea/
+.kiro/

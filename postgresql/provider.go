@@ -217,6 +217,7 @@ func Provider() *schema.Provider {
 			"postgresql_server":                    resourcePostgreSQLServer(),
 			"postgresql_user_mapping":              resourcePostgreSQLUserMapping(),
 			"postgresql_foreign_table":             resourcePostgreSQLForeignTable(),
+			"postgresql_import_foreign_schema":     resourcePostgreSQLImportForeignSchema(),
 			"postgresql_security_label":            resourcePostgreSQLSecurityLabel(),
 		},
 
