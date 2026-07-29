@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars and replace with real values.
+# Keep secrets out of version control (use a secrets manager / TF_VAR_ env vars in CI).
+
+local_database = "app"
+local_username = "app_owner"
+local_password = "CHANGE_ME"
+local_schema   = "public"
+
+server_name     = "remote_server"
+remote_host     = "remote-db.example.com"
+remote_port     = "5432"
+remote_database = "source_db"
+remote_username = "readonly"
+remote_password = "CHANGE_ME"
+remote_schema   = "public"
+
+remote_table_name  = "some_table"
+foreign_table_name = "some_table"
+
+columns = [
+  { name = "id", type = "integer", not_null = true },
+  { name = "data", type = "text" },
+]
+
+app_role = "app_reader"
