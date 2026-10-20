@@ -204,6 +204,8 @@ func resourcePostgreSQLImportForeignSchemaUpdate(db *DBConnection, d *schema.Res
 	// any previously imported foreign tables untouched.
 	if d.Get(importForeignSchemaImportAttr).(bool) {
 		if err := runImportForeignSchema(db, d, database); err != nil {
+			// keep the prior triggers in state so the next apply retries the import
+			d.Partial(true)
 			return err
 		}
 	}
